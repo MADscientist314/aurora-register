@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register interest · AURORA</title>
+<meta name="description" content="Register your interest in using AURORA, a research model for placenta accreta spectrum on 2D ultrasound, or in helping train AURORA 2.0.">
+<meta property="og:title" content="Register interest in AURORA">
+<meta property="og:description" content="Use AURORA for research, or help train AURORA 2.0 as a contributing center.">
+<meta property="og:image" content="assets/synthetic-fan.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4 L29 26 A16 16 0 0 1 3 26 Z' fill='%23111315'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF9; --panel:#F1F1EE; --ink:#111315; --ink-2:#3A3D42; --ink-3:#50545A;
+  --rule:#E3E3E0; --dark:#0B0C0E; --on-dark:#F2F1ED; --on-dark-2:#B4B7BC; --accent:#F2A83B;
+  --btn:#111315; --btn-ink:#FAFAF9;
+  --serif:'Instrument Serif','Times New Roman',serif;
+  --sans:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0F1012; --panel:#17181B; --ink:#F2F1ED; --ink-2:#C9CBCF; --ink-3:#A9ACB1;
+    --rule:#2A2C31; --btn:#F2F1ED; --btn-ink:#0B0C0E;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,p{text-wrap:pretty}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+.mono{font-family:var(--mono)}
+header.top{border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;padding-top:18px;padding-bottom:18px}
+.wordmark{font-family:var(--serif);font-size:28px;letter-spacing:.01em;text-decoration:none}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.spacer{flex:1 1 20px}
+.stamp-sm{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--rule);padding:4px 8px}
+
+.hero{background:var(--dark);color:var(--on-dark)}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:40px 56px;align-items:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(48px,7vw,88px)}
+.hero-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,104px);line-height:.95;letter-spacing:-.02em}
+h1 em{font-style:italic;color:#C9CBCF}
+.lede{margin:0;max-width:36ch;font-size:clamp(17px,1.5vw,20px);color:var(--on-dark-2)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-size:16px;font-weight:500;text-decoration:none;border:0;cursor:pointer}
+.btn-light{background:#F2F1ED;color:#0B0C0E}
+.btn-light:hover{background:#FFFFFF}
+.btn[aria-disabled="true"]{background:#3A3D42;color:#C9CBCF;cursor:default}
+.note{font-family:var(--mono);font-size:12px;color:#A9ACB1}
+.stamp{align-self:flex-start;transform:rotate(-1.6deg);border:1px solid #5E6166;outline:1px solid #2B2D31;outline-offset:3px;padding:10px 14px;max-width:440px;font-family:var(--mono);color:#C9CBCF}
+.stamp b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.stamp span{display:block;font-size:11px;line-height:1.5;color:#A9ACB1;margin-top:4px}
+figure.fan{flex:1.2 1 460px;min-width:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.fan-box{position:relative;width:100%;aspect-ratio:1600/1100}
+.fan-box img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.marker{position:absolute;display:flex;align-items:center;gap:8px}
+.marker .dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.marker .line{flex:1 1 auto;height:1px;background:#8E9196}
+.marker .label{flex:none;font-family:var(--serif);font-style:italic;font-size:clamp(14px,1.3vw,18px);color:#ECEBE6}
+figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#8E9196}
+
+section.block .wrap{display:flex;flex-wrap:wrap;gap:20px 56px;padding-top:clamp(64px,8vw,112px);padding-bottom:clamp(64px,8vw,112px)}
+.sec-label{flex:0 0 140px;display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.sec-body{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:40px}
+h2{margin:0;max-width:20ch;font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.2vw,58px);line-height:1.04;letter-spacing:-.015em}
+.paths{display:flex;flex-wrap:wrap;gap:24px}
+.path{flex:1 1 300px;min-width:0;border-top:1px solid var(--ink);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.path .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.path h3{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+.path p{margin:0;font-size:16px;color:var(--ink-2);max-width:46ch}
+.asks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:0;border-top:1px solid var(--rule)}
+.asks li{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:baseline;font-size:15px;color:var(--ink-2)}
+.asks li span{font-family:var(--mono);font-size:11px;color:var(--ink-3);min-width:22px}
+
+.panel{background:var(--panel);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.register{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center}
+.register .copy{flex:2 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.register .copy p{margin:0;max-width:52ch;color:var(--ink-2)}
+.btn-dark{background:var(--btn);color:var(--btn-ink)}
+.btn-dark[aria-disabled="true"]{background:var(--rule);color:var(--ink-3)}
+.qr{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.qr img{width:168px;height:168px;background:#FFFFFF;padding:10px;border-radius:6px;display:block}
+.qr span{font-family:var(--mono);font-size:11px;color:var(--ink-3);max-width:24ch}
+
+footer{background:var(--dark);color:#A9ACB1;font-size:13px;line-height:1.6}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:44px;padding-bottom:44px}
+footer .wm{flex:0 0 140px;font-family:var(--serif);font-size:26px;color:#F2F1ED}
+footer p{margin:0;flex:1 1 280px;max-width:58ch}
+footer a{color:#F2F1ED;text-underline-offset:3px}
+@media (max-width:640px){ .marker .label{font-size:13px} .sec-label{flex-basis:100%;flex-direction:row;gap:12px} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="./">Aurora</a>
+    <span class="tag">Register interest</span>
+    <span class="spacer"></span>
+    <span class="stamp-sm">Research use only</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="title">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Placenta accreta spectrum · ultrasound AI</div>
+        <h1 id="title">Help build the <em>next</em> AURORA.</h1>
+        <p class="lede">AURORA reads routine 2D transabdominal ultrasound for signs of placenta accreta spectrum. We are looking for clinicians and scientists who want to use it, and for centers that want to help train AURORA 2.0.</p>
+        <div class="cta-row">
+          <a class="btn btn-light js-form-link" href="#register">Register your interest</a>
+          <span class="note">About 2 minutes. No patient information.</span>
+        </div>
+        <div class="stamp" role="note">
+          <b>Caution: investigational device</b>
+          <span>Limited by Federal (or United States) law to investigational use. Not for clinical diagnosis or patient management.</span>
+        </div>
+      </div>
+      <figure class="fan">
+        <div class="fan-box">
+          <img src="assets/synthetic-fan.jpg" width="1200" height="825" alt="Synthetic transabdominal ultrasound fan showing a bladder, the uterine wall and a placenta with lacunae">
+          <div class="marker" style="left:43%;top:21.5%;width:34%"><span class="dot"></span><span class="line"></span><span class="label">bladder</span></div>
+          <div class="marker" style="left:44.5%;top:31.6%;width:35.5%"><span class="dot"></span><span class="line"></span><span class="label">clear zone, lost here</span></div>
+          <div class="marker" style="left:47.5%;top:44.2%;width:36%"><span class="dot"></span><span class="line"></span><span class="label">lacunae</span></div>
+        </div>
+        <figcaption>Synthetic image made for this page. No patient scans are shown here.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="ways">
+    <div class="wrap">
+      <div class="sec-label"><span>§ 01</span><span>Two ways in</span></div>
+      <div class="sec-body">
+        <h2 id="ways">Use it on your scans, or help it learn from them.</h2>
+        <div class="paths">
+          <div class="path">
+            <span class="k">Use</span>
+            <h3>Research access</h3>
+            <p>A research viewer is being prepared that runs AURORA in your own browser, so scans never leave your device. Registered researchers will be invited first.</p>
+          </div>
+          <div class="path">
+            <span class="k">Contribute</span>
+            <h3>Train AURORA 2.0</h3>
+            <p>We are forming a consortium of centers with pathology-confirmed PAS cases. Images are de-identified at your site and shared only under signed institutional agreements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block panel" id="register" aria-labelledby="reg">
+    <div class="wrap">
+      <div class="sec-label"><span>§ 02</span><span>Register</span></div>
+      <div class="sec-body">
+        <div class="register">
+          <div class="copy">
+            <h2 id="reg">Tell us about your center.</h2>
+            <p>The form asks for your name, email, institution, role and country; whether you want to use AURORA, contribute images, or join a multicenter study; your ultrasound machines and reading software; and roughly how many PAS cases you see each year.</p>
+            <div class="cta-row">
+              <a class="btn btn-dark js-form-link" href="#register">Open the registration form</a>
+            </div>
+          </div>
+          <div class="qr">
+            <img src="qr/aurora-register-qr.svg" width="168" height="168" alt="QR code linking to this registration page">
+            <span>Scan to open this page on your phone.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Aurora</span>
+    <p>AURORA is an investigational research model and is not cleared by the FDA. Its output must not be used to diagnose or manage any patient. Hammerquist AL, et al. Artificial intelligence-based ultrasound screening for antenatal detection of placenta accreta spectrum. <em>Am J Obstet Gynecol MFM</em> 2026;8(10):102079. <a href="https://doi.org/10.1016/j.ajogmf.2026.102079">doi:10.1016/j.ajogmf.2026.102079</a></p>
+    <p>Responses go to a sheet only the AURORA team can open and are used only to contact you about AURORA. This page sets no cookies and runs no analytics; GitHub, which hosts it, logs visitor IP addresses for security.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = document.querySelectorAll('.js-form-link');
+  function closed() {
+    links.forEach(function (a) {
+      a.textContent = 'Registration opens shortly';
+      a.setAttribute('aria-disabled', 'true');
+      a.removeAttribute('href');
+    });
+  }
+  fetch('form.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : {}; })
+    .then(function (cfg) {
+      var url = cfg && cfg.form_url;
+      if (!url || !/^https:\/\/(docs\.google\.com\/forms|forms\.gle)\//.test(url)) { closed(); return; }
+      links.forEach(function (a) { a.href = url; a.rel = 'noopener'; });
+    })
+    .catch(closed);
+})();
+</script>
+</body>
+</html>
