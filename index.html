@@ -3,176 +3,291 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Register interest · AURORA</title>
-<meta name="description" content="Register your interest in using AURORA, a research model for placenta accreta spectrum on 2D ultrasound, or in helping train AURORA 2.0.">
-<meta property="og:title" content="Register interest in AURORA">
-<meta property="og:description" content="Use AURORA for research, or help train AURORA 2.0 as a contributing center.">
-<meta property="og:image" content="assets/synthetic-fan.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4 L29 26 A16 16 0 0 1 3 26 Z' fill='%23111315'/%3E%3C/svg%3E">
+<meta name="description" content="Register interest in AURORA, a research model that scores 2D transabdominal ultrasound for placenta accreta spectrum, or in contributing data to AURORA 2.0.">
+<meta property="og:title" content="AURORA: register interest">
+<meta property="og:description" content="Research access to AURORA, and a multicenter consortium to train AURORA 2.0.">
+<meta property="og:image" content="assets/og-card.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@500;600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FAFAF9; --panel:#F1F1EE; --ink:#111315; --ink-2:#3A3D42; --ink-3:#50545A;
-  --rule:#E3E3E0; --dark:#0B0C0E; --on-dark:#F2F1ED; --on-dark-2:#B4B7BC; --accent:#F2A83B;
-  --btn:#111315; --btn-ink:#FAFAF9;
-  --serif:'Instrument Serif','Times New Roman',serif;
-  --sans:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-  --mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#0F1012; --panel:#17181B; --ink:#F2F1ED; --ink-2:#C9CBCF; --ink-3:#A9ACB1;
-    --rule:#2A2C31; --btn:#F2F1ED; --btn-ink:#0B0C0E;
-  }
+  /* Brand palette, verified 2026-10-20 from bcm.edu logo.svg and CSS, and texaschildrens.org CSS */
+  --primary:#003087;        /* BCM logo blue */
+  --primary-strong:#031A6B; /* BCM navy: hover, pressed */
+  --primary-ink:#FFFFFF;
+  --secondary:#DA2530;      /* Texas Children's red: non-text accents and figure series */
+  --secondary-text:#B70F19; /* Texas Children's red for text (6.8:1 on white) */
+  --bg:#FFFFFF; --surface:#F5F5F5; --rule:#E5E5E5; --control:#8C8C8C;
+  --ink:#1A1A1A; --ink-2:#3D3D3D; --ink-3:#555555;
+  --serif:'Noto Serif',Georgia,'Times New Roman',serif;
+  --sans:'Noto Sans','Segoe UI',Helvetica,Arial,sans-serif;
+  --mono:'Noto Sans Mono',Consolas,Menlo,monospace;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-h1,h2,p{text-wrap:pretty}
-.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--primary)}
+a:hover{color:var(--primary-strong)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+h1,h2,h3,p{text-wrap:pretty}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
 .mono{font-family:var(--mono)}
+
+/* Institutional band and header */
+.band{height:6px;background:linear-gradient(90deg,var(--primary) 0 60%,var(--secondary) 60% 100%)}
 header.top{border-bottom:1px solid var(--rule)}
-header.top .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;padding-top:18px;padding-bottom:18px}
-.wordmark{font-family:var(--serif);font-size:28px;letter-spacing:.01em;text-decoration:none}
-.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink)}
+.brand b{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:.04em;color:var(--primary)}
+.brand span{font-size:13px;color:var(--ink-3)}
 .spacer{flex:1 1 20px}
-.stamp-sm{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--rule);padding:4px 8px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:4px 8px;border-radius:3px}
 
-.hero{background:var(--dark);color:var(--on-dark)}
-.hero .wrap{display:flex;flex-wrap:wrap;gap:40px 56px;align-items:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(48px,7vw,88px)}
-.hero-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,104px);line-height:.95;letter-spacing:-.02em}
-h1 em{font-style:italic;color:#C9CBCF}
-.lede{margin:0;max-width:36ch;font-size:clamp(17px,1.5vw,20px);color:var(--on-dark-2)}
-.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-size:16px;font-weight:500;text-decoration:none;border:0;cursor:pointer}
-.btn-light{background:#F2F1ED;color:#0B0C0E}
-.btn-light:hover{background:#FFFFFF}
-.btn[aria-disabled="true"]{background:#3A3D42;color:#C9CBCF;cursor:default}
-.note{font-family:var(--mono);font-size:12px;color:#A9ACB1}
-.stamp{align-self:flex-start;transform:rotate(-1.6deg);border:1px solid #5E6166;outline:1px solid #2B2D31;outline-offset:3px;padding:10px 14px;max-width:440px;font-family:var(--mono);color:#C9CBCF}
-.stamp b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
-.stamp span{display:block;font-size:11px;line-height:1.5;color:#A9ACB1;margin-top:4px}
-figure.fan{flex:1.2 1 460px;min-width:0;margin:0;display:flex;flex-direction:column;gap:12px}
-.fan-box{position:relative;width:100%;aspect-ratio:1600/1100}
-.fan-box img{position:absolute;inset:0;width:100%;height:100%;display:block}
-.marker{position:absolute;display:flex;align-items:center;gap:8px}
-.marker .dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.marker .line{flex:1 1 auto;height:1px;background:#8E9196}
-.marker .label{flex:none;font-family:var(--serif);font-style:italic;font-size:clamp(14px,1.3vw,18px);color:#ECEBE6}
-figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#8E9196}
+/* Title block */
+.title{padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;gap:32px 56px;align-items:flex-start}
+.title .lead{flex:3 1 480px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary-text)}
+h1{margin:0;font-family:var(--serif);font-weight:600;color:var(--primary);font-size:clamp(32px,4.4vw,50px);line-height:1.12;letter-spacing:-.01em}
+.abstract{margin:0;max-width:62ch;font-size:clamp(17px,1.4vw,19px);color:var(--ink-2)}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:4px;background:var(--primary);color:var(--primary-ink);font-weight:600;font-size:16px;text-decoration:none}
+.btn:hover{background:var(--primary-strong);color:#FFFFFF}
+.btn[aria-disabled="true"]{background:var(--surface);color:var(--ink-3);border:1px solid var(--rule);cursor:default}
+.hint{font-size:14px;color:var(--ink-3)}
 
-section.block .wrap{display:flex;flex-wrap:wrap;gap:20px 56px;padding-top:clamp(64px,8vw,112px);padding-bottom:clamp(64px,8vw,112px)}
-.sec-label{flex:0 0 140px;display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-.sec-body{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:40px}
-h2{margin:0;max-width:20ch;font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.2vw,58px);line-height:1.04;letter-spacing:-.015em}
-.paths{display:flex;flex-wrap:wrap;gap:24px}
-.path{flex:1 1 300px;min-width:0;border-top:1px solid var(--ink);padding-top:20px;display:flex;flex-direction:column;gap:10px}
-.path .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.path h3{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
-.path p{margin:0;font-size:16px;color:var(--ink-2);max-width:46ch}
-.asks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:0;border-top:1px solid var(--rule)}
-.asks li{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:baseline;font-size:15px;color:var(--ink-2)}
-.asks li span{font-family:var(--mono);font-size:11px;color:var(--ink-3);min-width:22px}
+/* Study summary box */
+.summary{flex:2 1 300px;min-width:0;border:1px solid var(--rule);border-top:3px solid var(--primary);border-radius:4px;background:var(--surface);padding:18px 20px}
+.summary h2{margin:0 0 10px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.summary dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:15px}
+.summary dt{color:var(--ink-3)}
+.summary dd{margin:0;color:var(--ink)}
 
-.panel{background:var(--panel);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.register{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center}
-.register .copy{flex:2 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px}
-.register .copy p{margin:0;max-width:52ch;color:var(--ink-2)}
-.btn-dark{background:var(--btn);color:var(--btn-ink)}
-.btn-dark[aria-disabled="true"]{background:var(--rule);color:var(--ink-3)}
-.qr{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.qr img{width:168px;height:168px;background:#FFFFFF;padding:10px;border-radius:6px;display:block}
-.qr span{font-family:var(--mono);font-size:11px;color:var(--ink-3);max-width:24ch}
+/* Sections */
+section.sec{border-top:1px solid var(--rule)}
+section.sec .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(40px,6vw,64px);display:flex;flex-direction:column;gap:24px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.sec-head .num{font-family:var(--mono);font-size:13px;color:var(--secondary-text)}
+h2.h{margin:0;font-family:var(--serif);font-weight:600;color:var(--primary);font-size:clamp(26px,2.8vw,34px);line-height:1.15}
+.sec p.body{margin:0;max-width:68ch;color:var(--ink-2)}
+figure{margin:0;display:flex;flex-direction:column;gap:12px}
+figcaption{font-size:14px;color:var(--ink-2);max-width:80ch}
+figcaption b{color:var(--ink)}
 
-footer{background:var(--dark);color:#A9ACB1;font-size:13px;line-height:1.6}
-footer .wrap{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:44px;padding-bottom:44px}
-footer .wm{flex:0 0 140px;font-family:var(--serif);font-size:26px;color:#F2F1ED}
-footer p{margin:0;flex:1 1 280px;max-width:58ch}
-footer a{color:#F2F1ED;text-underline-offset:3px}
-@media (max-width:640px){ .marker .label{font-size:13px} .sec-label{flex-basis:100%;flex-direction:row;gap:12px} }
+/* Figure 1: pipeline */
+ol.pipeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px;counter-reset:step}
+ol.pipeline li{position:relative;border:1px solid var(--rule);border-radius:4px;padding:14px 14px 16px;background:var(--bg);display:flex;flex-direction:column;gap:6px;counter-increment:step}
+ol.pipeline li::before{content:counter(step);font-family:var(--mono);font-size:12px;color:var(--primary);border:1px solid var(--primary);border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center}
+ol.pipeline li b{font-size:15px;line-height:1.3}
+ol.pipeline li span{font-size:14px;color:var(--ink-2);line-height:1.45}
+ol.pipeline li.out{border-color:var(--primary);background:var(--surface)}
+
+/* Figure 2: forest plot */
+.forest{border:1px solid var(--rule);border-radius:4px;padding:16px 18px 10px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--ink-2);margin-bottom:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.legend .ens{background:var(--primary)}
+.legend .cnn{background:#FFFFFF;border:2px solid var(--secondary)}
+.frow{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 12.5rem;align-items:center;gap:6px 16px;padding:8px 0;border-top:1px solid var(--rule)}
+.frow:first-of-type{border-top:0}
+.frow .lab{font-weight:600;font-size:15px}
+.track{position:relative;height:34px}
+.track .grid{position:absolute;top:0;bottom:0;width:1px;background:var(--rule)}
+.ci{position:absolute;height:2px;transform:translateY(-1px)}
+.pt{position:absolute;width:10px;height:10px;border-radius:50%;transform:translate(-5px,-5px)}
+.ci.ens{top:11px;background:var(--primary)} .pt.ens{top:11px;background:var(--primary)}
+.ci.cnn{top:24px;background:var(--secondary)} .pt.cnn{top:24px;background:#FFFFFF;border:2px solid var(--secondary)}
+.vals{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.vals .e{color:var(--primary)} .vals .c{color:var(--secondary-text)}
+.axis{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 12.5rem;gap:16px;padding-top:4px}
+.axis .ticks{position:relative;height:18px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.axis .ticks span{position:absolute;transform:translateX(-50%)}
+.axis .ticks span:first-child{transform:none}
+.axis .ticks span:last-child{transform:translateX(-100%)}
+@media (max-width:700px){
+  .frow,.axis{grid-template-columns:5.5rem minmax(0,1fr)}
+  .frow .vals{grid-column:2}
+  .axis .pad2{display:none}
+}
+
+/* Participation */
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px}
+.way{border:1px solid var(--rule);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.way h3{margin:0;font-family:var(--serif);font-weight:600;font-size:22px}
+.way .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary-text)}
+.way ul{margin:0;padding-left:20px;color:var(--ink-2);font-size:15px;display:flex;flex-direction:column;gap:4px}
+
+/* Register */
+.register{display:flex;flex-wrap:wrap;gap:28px 56px;align-items:center}
+.register .copy{flex:3 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.register .copy p{margin:0;max-width:62ch;color:var(--ink-2)}
+.qr{flex:1 1 180px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.qr img{width:156px;height:156px;display:block;border:1px solid var(--rule);border-radius:4px;padding:8px;background:#FFFFFF}
+.qr span{font-size:13px;color:var(--ink-3);max-width:22ch}
+
+footer{background:var(--surface);border-top:1px solid var(--rule);font-size:14px;color:var(--ink-2)}
+footer .wrap{padding-top:32px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px 40px}
+footer p{margin:0}
+footer .caution{border-left:0;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--ink-2)}
 </style>
 </head>
 <body>
-
+<div class="band" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
-    <a class="wordmark" href="./">Aurora</a>
-    <span class="tag">Register interest</span>
+    <a class="brand" href="./">
+      <b>AURORA</b>
+      <span>AI Ultrasound Risk Assessment for Obstetrical Recognition of Accreta</span>
+    </a>
     <span class="spacer"></span>
-    <span class="stamp-sm">Research use only</span>
+    <span class="tag">Investigational · research use only</span>
   </div>
 </header>
 
 <main>
-  <section class="hero" aria-labelledby="title">
-    <div class="wrap">
-      <div class="hero-copy">
-        <div class="eyebrow">Placenta accreta spectrum · ultrasound AI</div>
-        <h1 id="title">Help build the <em>next</em> AURORA.</h1>
-        <p class="lede">AURORA reads routine 2D transabdominal ultrasound for signs of placenta accreta spectrum. We are looking for clinicians and scientists who want to use it, and for centers that want to help train AURORA 2.0.</p>
-        <div class="cta-row">
-          <a class="btn btn-light js-form-link" href="#register">Register your interest</a>
-          <span class="note">About 2 minutes. No patient information.</span>
-        </div>
-        <div class="stamp" role="note">
-          <b>Caution: investigational device</b>
-          <span>Limited by Federal (or United States) law to investigational use. Not for clinical diagnosis or patient management.</span>
-        </div>
+  <div class="wrap title">
+    <div class="lead">
+      <div class="kicker">Registration of interest</div>
+      <h1>Research access to AURORA, and a consortium to train AURORA&nbsp;2.0</h1>
+      <p class="abstract">AURORA is a convolutional neural network that scores routine 2D transabdominal ultrasound for placenta accreta spectrum (PAS). It was developed at Baylor College of Medicine and Texas Children's Hospital. We invite clinicians and scientists who want to evaluate it, and centers with pathology-confirmed PAS cases that want to help train the next version.</p>
+      <div class="cta">
+        <a class="btn js-form-link" href="#register">Register your interest</a>
+        <span class="hint">About 2 minutes. Do not enter patient information.</span>
       </div>
-      <figure class="fan">
-        <div class="fan-box">
-          <img src="assets/synthetic-fan.jpg" width="1200" height="825" alt="Synthetic transabdominal ultrasound fan showing a bladder, the uterine wall and a placenta with lacunae">
-          <div class="marker" style="left:43%;top:21.5%;width:34%"><span class="dot"></span><span class="line"></span><span class="label">bladder</span></div>
-          <div class="marker" style="left:44.5%;top:31.6%;width:35.5%"><span class="dot"></span><span class="line"></span><span class="label">clear zone, lost here</span></div>
-          <div class="marker" style="left:47.5%;top:44.2%;width:36%"><span class="dot"></span><span class="line"></span><span class="label">lacunae</span></div>
-        </div>
-        <figcaption>Synthetic image made for this page. No patient scans are shown here.</figcaption>
+    </div>
+    <aside class="summary" aria-labelledby="sum-h">
+      <h2 id="sum-h">Study summary, AURORA 1.0</h2>
+      <dl>
+        <dt>Design</dt><dd>Retrospective, single center</dd>
+        <dt>Period</dt><dd>2018 to 2025</dd>
+        <dt>Patients</dt><dd>113 (79 train, 17 validation, 17 test)</dd>
+        <dt>Images</dt><dd>756 DICOM clips, 38,907 frames</dd>
+        <dt>Model</dt><dd>EfficientNetB0 CNN with a clinical ensemble</dd>
+        <dt>Status</dt><dd>Investigational; not FDA cleared</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="sec" aria-labelledby="fig1-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">1</span><h2 class="h" id="fig1-h">How AURORA scores a scan</h2></div>
+      <figure>
+        <ol class="pipeline">
+          <li><b>DICOM cine clip</b><span>2D transabdominal views of the lower uterine segment and placenta.</span></li>
+          <li><b>Frame preprocessing</b><span>Grayscale, crop to the image region, resize to 256 × 256.</span></li>
+          <li><b>CNN per frame</b><span>EfficientNetB0 (ImageNet-pretrained) outputs a probability for every frame.</span></li>
+          <li><b>Patient score</b><span>Frame probabilities are averaged across all of a patient's clips.</span></li>
+          <li class="out"><b>Clinical ensemble</b><span>Patient score plus prior cesarean count and previa, combined by logistic regression, random forest and gradient boosting.</span></li>
+        </ol>
+        <figcaption><b>Figure 1.</b> AURORA 1.0 pipeline. Grad-CAM maps show which image regions drove each frame's score.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="ways">
+  <section class="sec" aria-labelledby="fig2-h">
     <div class="wrap">
-      <div class="sec-label"><span>§ 01</span><span>Two ways in</span></div>
-      <div class="sec-body">
-        <h2 id="ways">Use it on your scans, or help it learn from them.</h2>
-        <div class="paths">
-          <div class="path">
-            <span class="k">Use</span>
-            <h3>Research access</h3>
-            <p>A research viewer is being prepared that runs AURORA in your own browser, so scans never leave your device. Registered researchers will be invited first.</p>
+      <div class="sec-head"><span class="num">2</span><h2 class="h" id="fig2-h">Performance on the held-out test set</h2></div>
+      <p class="body">Seventeen test patients (9 PAS, 8 without PAS) from the development center. The intervals are wide, and external validation at other centers is the next step.</p>
+      <figure>
+        <div class="forest" role="img" aria-label="Forest plot of sensitivity, specificity, predictive values, accuracy and AUC with 95% confidence intervals for the ensemble and the CNN alone">
+          <div class="legend"><span><i class="ens"></i>Ensemble (CNN + prior cesareans + previa)</span><span><i class="cnn"></i>CNN alone</span></div>
+
+          <div class="frow"><span class="lab">Sensitivity</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:66.4%;width:33.6%"></span><span class="ens pt" style="left:100%"></span>
+              <span class="cnn ci" style="left:51.8%;width:47.9%"></span><span class="cnn pt" style="left:88.9%"></span>
+            </div>
+            <span class="vals"><span class="e">100.0 (66.4–100)</span><br><span class="c">88.9 (51.8–99.7)</span></span>
           </div>
-          <div class="path">
-            <span class="k">Contribute</span>
-            <h3>Train AURORA 2.0</h3>
-            <p>We are forming a consortium of centers with pathology-confirmed PAS cases. Images are de-identified at your site and shared only under signed institutional agreements.</p>
+          <div class="frow"><span class="lab">Specificity</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:34.9%;width:61.9%"></span><span class="ens pt" style="left:75%"></span>
+              <span class="cnn ci" style="left:34.9%;width:61.9%"></span><span class="cnn pt" style="left:75%"></span>
+            </div>
+            <span class="vals"><span class="e">75.0 (34.9–96.8)</span><br><span class="c">75.0 (34.9–96.8)</span></span>
           </div>
+          <div class="frow"><span class="lab">PPV</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:48.2%;width:49.5%"></span><span class="ens pt" style="left:81.8%"></span>
+              <span class="cnn ci" style="left:44.4%;width:53.1%"></span><span class="cnn pt" style="left:80%"></span>
+            </div>
+            <span class="vals"><span class="e">81.8 (48.2–97.7)</span><br><span class="c">80.0 (44.4–97.5)</span></span>
+          </div>
+          <div class="frow"><span class="lab">NPV</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:54.1%;width:45.9%"></span><span class="ens pt" style="left:100%"></span>
+              <span class="cnn ci" style="left:42.1%;width:57.5%"></span><span class="cnn pt" style="left:85.7%"></span>
+            </div>
+            <span class="vals"><span class="e">100.0 (54.1–100)</span><br><span class="c">85.7 (42.1–99.6)</span></span>
+          </div>
+          <div class="frow"><span class="lab">Accuracy</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:63.6%;width:34.9%"></span><span class="ens pt" style="left:88.2%"></span>
+              <span class="cnn ci" style="left:56.6%;width:39.6%"></span><span class="cnn pt" style="left:82.4%"></span>
+            </div>
+            <span class="vals"><span class="e">88.2 (63.6–98.5)</span><br><span class="c">82.4 (56.6–96.2)</span></span>
+          </div>
+          <div class="frow"><span class="lab">AUC</span>
+            <div class="track">
+              <span class="grid" style="left:0%"></span><span class="grid" style="left:25%"></span><span class="grid" style="left:50%"></span><span class="grid" style="left:75%"></span><span class="grid" style="left:100%"></span>
+              <span class="ens ci" style="left:87.5%;width:12.5%"></span><span class="ens pt" style="left:97.2%"></span>
+              <span class="cnn ci" style="left:63.3%;width:36.7%"></span><span class="cnn pt" style="left:86.1%"></span>
+            </div>
+            <span class="vals"><span class="e">0.972 (0.875–1.000)</span><br><span class="c">0.861 (0.633–1.000)</span></span>
+          </div>
+          <div class="axis" aria-hidden="true"><span></span><div class="ticks"><span style="left:0%">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span style="left:75%">75</span><span style="left:100%">100</span></div><span class="pad2"></span></div>
+        </div>
+        <figcaption><b>Figure 2.</b> Point estimates with 95% confidence intervals on a 0 to 100% scale (AUC on 0 to 1). Proportions use exact Clopper-Pearson intervals. Ensemble confusion matrix: 9 true positives, 6 true negatives, 2 false positives, 0 false negatives.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="ways-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">3</span><h2 class="h" id="ways-h">Ways to participate</h2></div>
+      <div class="ways">
+        <div class="way">
+          <span class="k">Research use</span>
+          <h3>Evaluate AURORA at your institution</h3>
+          <ul>
+            <li>A browser-based research viewer is in preparation; scans are processed on your own computer and never uploaded.</li>
+            <li>Access is granted to registered researchers under a research-only license.</li>
+            <li>Output is a continuous research score, not a diagnosis.</li>
+          </ul>
+        </div>
+        <div class="way">
+          <span class="k">Data contribution</span>
+          <h3>Help train AURORA 2.0</h3>
+          <ul>
+            <li>For centers with histopathology-confirmed PAS cases.</li>
+            <li>Images are de-identified at your site before anything is shared.</li>
+            <li>Participation runs under institutional IRB approval and signed data agreements.</li>
+            <li>Contributors are credited under a consortium authorship policy.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block panel" id="register" aria-labelledby="reg">
+  <section class="sec" id="register" aria-labelledby="reg-h">
     <div class="wrap">
-      <div class="sec-label"><span>§ 02</span><span>Register</span></div>
-      <div class="sec-body">
-        <div class="register">
-          <div class="copy">
-            <h2 id="reg">Tell us about your center.</h2>
-            <p>The form asks for your name, email, institution, role and country; whether you want to use AURORA, contribute images, or join a multicenter study; your ultrasound machines and reading software; and roughly how many PAS cases you see each year.</p>
-            <div class="cta-row">
-              <a class="btn btn-dark js-form-link" href="#register">Open the registration form</a>
-            </div>
-          </div>
-          <div class="qr">
-            <img src="qr/aurora-register-qr.svg" width="168" height="168" alt="QR code linking to this registration page">
-            <span>Scan to open this page on your phone.</span>
-          </div>
+      <div class="sec-head"><span class="num">4</span><h2 class="h" id="reg-h">Register</h2></div>
+      <div class="register">
+        <div class="copy">
+          <p>The form asks for your name, email, institution, role and country; whether you want to use AURORA, contribute data, or join a multicenter collaboration; your ultrasound systems and reporting software; your approximate annual number of PAS cases; and whether PAS is confirmed by histopathology at your center.</p>
+          <div class="cta"><a class="btn js-form-link" href="#register">Open the registration form</a></div>
+        </div>
+        <div class="qr">
+          <img src="qr/aurora-register-qr.svg" width="156" height="156" alt="QR code linking to this registration page">
+          <span>Scan to open this page on a phone.</span>
         </div>
       </div>
     </div>
@@ -181,8 +296,9 @@ footer a{color:#F2F1ED;text-underline-offset:3px}
 
 <footer>
   <div class="wrap">
-    <span class="wm">Aurora</span>
-    <p>AURORA is an investigational research model and is not cleared by the FDA. Its output must not be used to diagnose or manage any patient. Hammerquist AL, et al. Artificial intelligence-based ultrasound screening for antenatal detection of placenta accreta spectrum. <em>Am J Obstet Gynecol MFM</em> 2026;8(10):102079. <a href="https://doi.org/10.1016/j.ajogmf.2026.102079">doi:10.1016/j.ajogmf.2026.102079</a></p>
+    <p><b>Citation.</b> Hammerquist AL, Lombaard HA, Sarada S, Mendez Martinez YH, Reed CC, Barrozo ER, Munoz JL, Lee W, Shamshirsaz AA, Belfort MA, Jochum MD. Artificial intelligence-based ultrasound screening for antenatal detection of placenta accreta spectrum. <i>Am J Obstet Gynecol MFM</i>. 2026;8(10):102079. <a href="https://doi.org/10.1016/j.ajogmf.2026.102079">doi:10.1016/j.ajogmf.2026.102079</a></p>
+    <p class="caution">CAUTION: Investigational device. Limited by Federal (or United States) law to investigational use. Not for clinical diagnosis or patient management.</p>
+    <p>Department of Obstetrics and Gynecology, Baylor College of Medicine and Texas Children's Hospital, Houston, Texas. Supported by the Texas Children's Hospital Research Vision program.</p>
     <p>Responses go to a sheet only the AURORA team can open and are used only to contact you about AURORA. This page sets no cookies and runs no analytics; GitHub, which hosts it, logs visitor IP addresses for security.</p>
   </div>
 </footer>

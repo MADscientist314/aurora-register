@@ -14,8 +14,9 @@ AURORA is an investigational device. It is not cleared by the FDA and is not for
 | `form.json` | The Google Form link the page's buttons open. Empty until the form exists. |
 | `form/build_form.gs` | Google Apps Script that builds the form and its response sheet. |
 | `qr/aurora-register-qr.png`, `.svg` | QR code for the live page (error correction H). |
-| `qr/aurora-register-card.png` | Print card, 6 x 8 in at 300 dpi, with the QR and the URL. |
-| `assets/synthetic-fan.jpg` | Synthetic ultrasound image generated for this page. Not from any patient. |
+| `qr/aurora-register-card.png` | Print card, 6 x 4 in landscape at 300 dpi, with the QR and the URL. |
+| `assets/og-card.png`, `assets/favicon.svg` | Link-preview image and site icon. |
+| `tools/make_cards.py` | Regenerates the QR code, print card, preview image and icon. |
 
 The QR code points at the registration page, not at the form, so the form can be replaced later without reprinting any QR codes.
 
@@ -44,3 +45,7 @@ Name, email, institution, role, country, interest (use AURORA for research and/o
 ## Citation
 
 Hammerquist AL, Lombaard HA, Sarada S, Mendez Martinez YH, Reed CC, Barrozo ER, Munoz JL, Lee W, Shamshirsaz AA, Belfort MA, Jochum MD. Artificial intelligence-based ultrasound screening for antenatal detection of placenta accreta spectrum. *Am J Obstet Gynecol MFM* 2026;8(10):102079. doi:10.1016/j.ajogmf.2026.102079
+
+## Design
+
+Colors follow the two institutions' web palettes, read from their live sites on 2026-10-20: Baylor College of Medicine logo blue `#003087` and navy `#031A6B` as primary, Texas Children's Hospital red `#DA2530` as accent (`#B70F19` where red is used for text), with Texas Children's neutrals. Type is Noto Serif and Noto Sans (Baylor's web typeface family). The page uses no institutional logos; any logo or joint lockup needs approval from BCM Marketing and Texas Children's Marketing.
